@@ -6,11 +6,6 @@
       <directory suffix=".php">./models</directory>
     </include>
   </coverage>
-
-  <logging>
-    <junit outputFile="build/phpunit/junit.xml"/>
-  </logging>
-  
   <testsuite name="unit-tests">
     <directory>./tests</directory>
   </testsuite>
