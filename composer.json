@@ -4,13 +4,6 @@
   "keywords": ["podio"],
   "homepage": "https://github.com/podio-community/podio-php",
   "license": "MIT",
-  "scripts": {
-    "test": [
-      "@putenv XDEBUG_MODE=coverage",
-      "phpunit --coverage-clover clover.xml --bootstrap vendor/autoload.php tests"
-    ],
-    "upload-coverage": "php-coveralls --coverage_clover=clover.xml -v"
-  },
   "authors": [
     {
       "name": "Daniel Schreiber",
@@ -43,5 +36,16 @@
     "friendsofphp/php-cs-fixer": "^3.0",
     "php-coveralls/php-coveralls": "^2.1",
     "phpunit/phpunit": "^9.5.8"
+  },
+
+  "scripts": {
+    "test": "vendor/bin/phpunit --log-junit build/phpunit/test_report.xml && vendor/bin/phpunit",
+    "coverage": "php -dxdebug.mode=coverage ./vendor/bin/phpunit --coverage-text",
+    "lint:phpcs-pr": "git diff --name-only $COMMIT_BEFORE..$COMMIT_AFTER | grep \\.php$ | xargs -I{} ./vendor/bin/phpcs --standard=PSR2 {}",
+    "lint:phpcs": "./vendor/bin/phpcs --standard=PSR2",
+    "lint":[
+      "@lint:phpcs-pr",
+      "@lint:phpcs"
+    ]
   }
 }
