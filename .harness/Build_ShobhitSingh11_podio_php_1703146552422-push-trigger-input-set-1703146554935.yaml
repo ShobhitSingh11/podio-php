@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_ShobhitSingh11_podio_php_1703146552422-push-trigger-input-set
+  identifier: Build_ShobhitSingh11_podio_php_1703146552422pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: autogen
+  pipeline:
+    identifier: Build_ShobhitSingh11_podio_php_1703146552422
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
