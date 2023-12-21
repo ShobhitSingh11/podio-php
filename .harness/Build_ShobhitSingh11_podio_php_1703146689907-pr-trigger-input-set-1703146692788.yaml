@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_ShobhitSingh11_podio_php_1703146689907-pr-trigger-input-set
+  identifier: Build_ShobhitSingh11_podio_php_1703146689907prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: autogen
+  pipeline:
+    identifier: Build_ShobhitSingh11_podio_php_1703146689907
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
